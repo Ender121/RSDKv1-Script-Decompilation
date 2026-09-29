@@ -1,0 +1,63 @@
+# EGZChomper.rsf  (478 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueF)
+LABEL 0:
+Equal(Object.ValueC, Object.YPos)
+Add(Object.ValueF, 1)
+goto(2)
+LABEL 1:
+Equal(TempValA, AngleTimer)
+Add(TempValA, Object.PropertyValue)
+ShL(TempValA, 1)
+Sin(Object.ValueD, TempValA)
+CheckGreater(Object.ValueD, 0)
+Add(CheckResult, 3)
+goto(CheckResult)
+LABEL 4:
+Mul(Object.ValueD, -1)
+LABEL 3:
+Div(Object.ValueD, 3)
+Add(Object.ValueD, Object.ValueC)
+Sub(Object.ValueD, Object.YPos)
+Add(Object.YPos, Object.ValueD)
+
+--- SubPlayerInteraction ---
+HurtCollision(-10, -16, 10, 16)
+goto(CheckResult)
+LABEL 1:
+goto(0)
+LABEL 2:
+CreateTempObject(23, 1, Object.XPos, Object.YPos)
+CreateTempObject(20, 0, Object.XPos, Object.YPos)
+Equal(Object.Type, 0)
+PlaySfx(5, 0)
+
+--- SubUnknown3 ---
+CheckLower(Object.ValueD, 0)
+goto(CheckResult)
+LABEL 0:
+Equal(Object.ValueA, 0)
+goto(2)
+LABEL 1:
+Inc(Object.ValueA)
+LABEL 2:
+CheckEqual(Object.ValueA, 16)
+Add(CheckResult, 3)
+goto(CheckResult)
+LABEL 4:
+Equal(Object.ValueA, 0)
+LABEL 3:
+Equal(TempValA, Object.ValueA)
+Equal(Object.ValueD, 0)
+ShR(TempValA, 3)
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(32, 32, -16, -16, 1, 35)
+SpriteFrame(32, 32, -16, -16, 34, 35)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(32, 32, -16, -16, 1, 35)
+CreateTempObject(31, 0, 0, 0)

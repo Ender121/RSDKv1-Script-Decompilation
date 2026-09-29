@@ -1,0 +1,33 @@
+# BS1BlockC.rsf  (261 bytes) - OK
+
+--- SubMain ---
+Inc(Object.ValueA)
+CheckEqual(Object.ValueA, 16)
+switch(CheckResult, 0)
+Equal(Object.ValueA, 0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 10: default -> pos 0 (line 0), end -> pos 22
+    case 1: -> pos 16 (line 3)
+
+--- SubPlayerInteraction ---
+BlockCollision(-12, -12, 12, 12)
+
+--- SubUnknown3 ---
+HandleBonusMovement(AngleTimer, Object.ValueD, Object.ValueE)
+Equal(TempValA, Object.ValueA)
+ShR(TempValA, 2)
+DrawSprite(TempValA)
+Equal(Object.XPos, Object.ValueD)
+Equal(Object.YPos, Object.ValueE)
+
+--- SubDraw ---
+SpriteFrame(24, 24, -12, -12, 51, 199)
+SpriteFrame(24, 24, -12, -12, 51, 224)
+SpriteFrame(24, 24, -12, -12, 76, 199)
+SpriteFrame(24, 24, -12, -12, 76, 224)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(24, 24, -12, -12, 51, 199)

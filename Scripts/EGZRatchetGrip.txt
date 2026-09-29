@@ -1,0 +1,126 @@
+# EGZRatchetGrip.rsf  (943 bytes) - OK
+
+--- SubMain ---
+switch(Object.ValueA, 0)
+CheckGreater(Object.ValueB, 0)
+switch(CheckResult, 0)
+Sub(Object.ValueB, 4)
+end switch(0)
+break(0)
+CheckLower(Object.ValueB, Object.ValueC)
+switch(CheckResult, 0)
+Add(Object.ValueB, 4)
+end switch(0)
+break(0)
+end switch(0)
+switch(Object.PropertyValue, 0)
+Equal(Object.YPos, Object.YPos[2])
+Add(Object.ValueA[2], Object.ValueA)
+break(0)
+Equal(Object.YPos, Object.YPos[1])
+Add(Object.ValueA[1], Object.ValueA)
+end switch(0)
+Sub(Object.YPos, 7)
+Add(Object.YPos, Object.ValueB)
+Equal(Object.ValueA, 0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 55
+    case 0: -> pos 6 (line 1)
+    case 1: -> pos 30 (line 8)
+    case 2: -> pos 30 (line 9)
+switch @pos 12: default -> pos 0 (line 0), end -> pos 24
+    case 1: -> pos 18 (line 4)
+switch @pos 37: default -> pos 0 (line 0), end -> pos 49
+    case 1: -> pos 43 (line 12)
+switch @pos 58: default -> pos 0 (line 0), end -> pos 95
+    case 0: -> pos 64 (line 18)
+    case 1: -> pos 81 (line 22)
+
+--- SubPlayerInteraction ---
+CheckEqual(Player.State, 23)
+switch(CheckResult, 0)
+PlatformCollision(-12, 8, 12, 28)
+switch(CheckResult, 0)
+Equal(Player.State, 23)
+Equal(Player.XPos, Object.XPos)
+Equal(TempValA, Object.YPos)
+Sub(TempValA, Player.CollisionRight)
+Add(TempValA, 12)
+Equal(Player.YPos, TempValA)
+PlaySfx(28, 0)
+end switch(0)
+break(0)
+TouchCollision(-12, 6, 12, 24)
+switch(CheckResult, 0)
+Equal(Player.XPos, Object.XPos)
+Equal(TempValA, Object.YPos)
+Sub(TempValA, Player.CollisionRight)
+Add(TempValA, 12)
+Equal(Player.YPos, TempValA)
+Add(Object.ValueA, Player.Down)
+Equal(Player.Frame, Player.Down)
+end switch(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 6: default -> pos 0 (line 0), end -> pos 144
+    case 0: -> pos 12 (line 2)
+    case 1: -> pos 78 (line 15)
+switch @pos 21: default -> pos 0 (line 0), end -> pos 72
+    case 1: -> pos 27 (line 5)
+switch @pos 87: default -> pos 0 (line 0), end -> pos 141
+    case 1: -> pos 93 (line 18)
+
+--- SubUnknown3 ---
+switch(Object.ValueA, 0)
+Equal(Object.ValueF, 0)
+break(0)
+switch(Object.ValueF, 0)
+CheckGreater(Object.ValueB, 0)
+switch(CheckResult, 0)
+PlayStageSfx(0, 0)
+Inc(Object.ValueF)
+end switch(0)
+end switch(0)
+break(0)
+switch(Object.ValueF, 0)
+CheckGreater(Object.ValueB, 0)
+switch(CheckResult, 0)
+PlayStageSfx(0, 0)
+Inc(Object.ValueF)
+end switch(0)
+end switch(0)
+end switch(0)
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 3)
+DrawSprite(TempValA)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 84
+    case 0: -> pos 6 (line 1)
+    case 1: -> pos 15 (line 4)
+    case 2: -> pos 51 (line 15)
+switch @pos 15: default -> pos 0 (line 0), end -> pos 45
+    case 0: -> pos 21 (line 6)
+switch @pos 27: default -> pos 0 (line 0), end -> pos 42
+    case 1: -> pos 33 (line 9)
+switch @pos 51: default -> pos 0 (line 0), end -> pos 81
+    case 1: -> pos 57 (line 17)
+switch @pos 63: default -> pos 0 (line 0), end -> pos 78
+    case 1: -> pos 69 (line 20)
+
+--- SubDraw ---
+SpriteFrame(24, 40, -12, -24, 194, 65)
+SpriteFrame(24, 48, -12, -32, 194, 57)
+SpriteFrame(24, 56, -12, -40, 194, 49)
+SpriteFrame(24, 64, -12, -48, 194, 41)
+SpriteFrame(24, 72, -12, -56, 194, 33)
+SpriteFrame(24, 80, -12, -64, 194, 25)
+SpriteFrame(24, 88, -12, -72, 194, 17)
+SpriteFrame(24, 96, -12, -80, 194, 9)
+SpriteFrame(24, 104, -12, -88, 194, 1)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(24, 40, -12, -24, 194, 57)

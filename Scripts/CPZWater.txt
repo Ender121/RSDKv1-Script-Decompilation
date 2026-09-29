@@ -1,0 +1,20 @@
+# CPZWater.rsf  (150 bytes) - OK
+
+--- SubMain ---
+SetWaterColour(208, 0, 224, 128)
+Equal(WaterLevel, 1228)
+Equal(Object.Type, 0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+EndSub(0)
+
+--- SubDraw ---
+SpriteFrame(16, 16, -8, -8, 1, 18)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 1, 18)
+CreateTempObject(34, 0, 0, 0)

@@ -1,0 +1,113 @@
+# EHZSnailBot.rsf  (921 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueA)
+LABEL 0:
+Sub(Object.XPos, 1)
+Sub(Object.XPos, Object.ValueC)
+Add(Object.ValueD, 1)
+ObjectFloorGrip(0, -1, 17)
+Add(CheckResult, 5)
+goto(CheckResult)
+LABEL 5:
+Equal(Object.ValueA, 2)
+Equal(Object.ValueC, 0)
+LABEL 6:
+goto(4)
+LABEL 1:
+Add(Object.XPos, 1)
+Add(Object.XPos, Object.ValueC)
+Add(Object.ValueD, 1)
+ObjectFloorGrip(0, 1, 17)
+Add(CheckResult, 7)
+goto(CheckResult)
+LABEL 7:
+Equal(Object.ValueA, 3)
+Equal(Object.ValueC, 0)
+LABEL 8:
+goto(4)
+LABEL 2:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 32)
+Add(CheckResult, 9)
+goto(CheckResult)
+LABEL 10:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueE, 2)
+Equal(Object.ValueA, 1)
+LABEL 9:
+goto(4)
+LABEL 3:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 32)
+Add(CheckResult, 11)
+goto(CheckResult)
+LABEL 12:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueE, 0)
+Equal(Object.ValueA, 0)
+LABEL 11:
+LABEL 4:
+Add(Object.ValueD, Object.ValueC)
+CheckGreater(Object.ValueD, 7)
+Add(CheckResult, 13)
+goto(CheckResult)
+LABEL 14:
+Equal(Object.ValueD, 0)
+
+--- SubPlayerInteraction ---
+HurtCollision(-20, -16, 19, 17)
+goto(CheckResult)
+LABEL 2:
+CreateTempObject(23, 1, Object.XPos, Object.YPos)
+CreateTempObject(20, 0, Object.XPos, Object.YPos)
+Equal(Object.Type, 0)
+PlaySfx(5, 0)
+LABEL 1:
+LABEL 0:
+Equal(TempValA, Object.ValueA)
+Add(TempValA, 3)
+goto(TempValA)
+LABEL 3:
+Equal(TempValA, Object.XPos)
+Sub(TempValA, Player.XPos)
+CheckLower(TempValA, 64)
+Add(CheckResult, 7)
+goto(CheckResult)
+LABEL 8:
+Equal(Object.ValueC, 1)
+LABEL 7:
+goto(5)
+LABEL 4:
+Equal(TempValA, Player.XPos)
+Sub(TempValA, Object.XPos)
+CheckLower(TempValA, 64)
+Add(CheckResult, 9)
+goto(CheckResult)
+LABEL 10:
+Equal(Object.ValueC, 1)
+
+--- SubUnknown3 ---
+Equal(TempValA, Object.ValueD)
+ShR(TempValA, 2)
+Add(TempValA, Object.ValueE)
+DrawSprite(TempValA)
+goto(Object.ValueC)
+LABEL 1:
+Add(TempValA, 4)
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(39, 33, -20, -16, 83, 35)
+SpriteFrame(39, 33, -20, -16, 123, 35)
+SpriteFrame(39, 33, -20, -16, 83, 1)
+SpriteFrame(39, 33, -20, -16, 123, 1)
+SpriteFrame(7, 5, 19, 0, 229, 1)
+SpriteFrame(6, 5, 19, 0, 237, 1)
+SpriteFrame(7, 5, -27, 0, 229, 7)
+SpriteFrame(6, 5, -26, 0, 237, 7)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(39, 33, -20, -16, 83, 1)
+CreateTempObject(34, 0, 0, 0)

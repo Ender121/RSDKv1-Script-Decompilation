@@ -1,0 +1,121 @@
+# DHZCroc.rsf  (1008 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueA)
+LABEL 0:
+Sub(Object.XPos, 1)
+Add(Object.ValueD, 1)
+ObjectFloorGrip(0, -1, 11)
+Add(CheckResult, 5)
+goto(CheckResult)
+LABEL 5:
+Equal(Object.ValueA, 2)
+Equal(Object.ValueC, 0)
+LABEL 6:
+goto(4)
+LABEL 1:
+Add(Object.XPos, 1)
+Add(Object.ValueD, 1)
+ObjectFloorGrip(0, 1, 11)
+Add(CheckResult, 7)
+goto(CheckResult)
+LABEL 7:
+Equal(Object.ValueA, 3)
+Equal(Object.ValueC, 0)
+LABEL 8:
+goto(4)
+LABEL 2:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 32)
+Add(CheckResult, 9)
+goto(CheckResult)
+LABEL 10:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueE, 6)
+Equal(Object.ValueA, 1)
+LABEL 9:
+goto(4)
+LABEL 3:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 32)
+Add(CheckResult, 11)
+goto(CheckResult)
+LABEL 12:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueE, 0)
+Equal(Object.ValueA, 0)
+LABEL 11:
+LABEL 4:
+CheckGreater(Object.ValueD, 11)
+Add(CheckResult, 13)
+goto(CheckResult)
+LABEL 14:
+Equal(Object.ValueD, 0)
+
+--- SubPlayerInteraction ---
+HurtCollision(-28, -11, 28, 11)
+goto(CheckResult)
+LABEL 2:
+CreateTempObject(23, 1, Object.XPos, Object.YPos)
+CreateTempObject(20, 0, Object.XPos, Object.YPos)
+Equal(Object.Type, 0)
+PlaySfx(5, 0)
+LABEL 1:
+LABEL 0:
+Equal(TempValA, Object.ValueA)
+Add(TempValA, 3)
+goto(TempValA)
+LABEL 3:
+Equal(TempValA, Object.XPos)
+Sub(TempValA, Player.XPos)
+CheckLower(TempValA, 64)
+Add(CheckResult, 7)
+goto(CheckResult)
+LABEL 8:
+CheckGreater(TempValA, 0)
+Equal(Object.ValueC, CheckResult)
+goto(5)
+LABEL 7:
+Equal(Object.ValueC, 0)
+goto(5)
+LABEL 4:
+Equal(TempValA, Player.XPos)
+Sub(TempValA, Object.XPos)
+CheckLower(TempValA, 64)
+Add(CheckResult, 9)
+goto(CheckResult)
+LABEL 10:
+CheckGreater(TempValA, 0)
+Equal(Object.ValueC, CheckResult)
+goto(5)
+LABEL 9:
+Equal(Object.ValueC, 0)
+
+--- SubUnknown3 ---
+Equal(TempValA, Object.ValueD)
+ShR(TempValA, 2)
+goto(Object.ValueC)
+LABEL 1:
+Add(TempValA, 3)
+LABEL 0:
+Add(TempValA, Object.ValueE)
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(56, 23, -28, -11, 18, 1)
+SpriteFrame(56, 23, -28, -11, 18, 25)
+SpriteFrame(56, 23, -28, -11, 18, 49)
+SpriteFrame(48, 31, -20, -19, 26, 73)
+SpriteFrame(48, 31, -20, -19, 26, 105)
+SpriteFrame(48, 31, -20, -19, 26, 137)
+SpriteFrame(56, 23, -28, -11, 75, 1)
+SpriteFrame(56, 23, -28, -11, 75, 25)
+SpriteFrame(56, 23, -28, -11, 75, 49)
+SpriteFrame(48, 31, -28, -19, 75, 73)
+SpriteFrame(48, 31, -28, -19, 75, 105)
+SpriteFrame(48, 31, -28, -19, 75, 137)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(56, 23, -28, -12, 18, 1)
+CreateTempObject(34, 0, 0, 0)

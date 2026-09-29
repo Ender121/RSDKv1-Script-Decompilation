@@ -1,0 +1,47 @@
+# EHZFireBall.rsf  (365 bytes) - OK
+
+--- SubMain ---
+Inc(Object.YPos)
+goto(Object.PropertyValue)
+LABEL 0:
+Dec(Object.XPos)
+goto(2)
+LABEL 1:
+Inc(Object.XPos)
+LABEL 2:
+Inc(Object.ValueA)
+CheckEqual(Object.ValueA, 8)
+Add(CheckResult, 3)
+goto(CheckResult)
+LABEL 4:
+Equal(Object.ValueA, 0)
+LABEL 3:
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 360)
+Add(CheckResult, 5)
+goto(CheckResult)
+LABEL 6:
+Equal(Object.ValueB, 0)
+Equal(Object.Type, 0)
+
+--- SubPlayerInteraction ---
+HurtCollisionForce(-4, -5, 4, 5)
+
+--- SubUnknown3 ---
+Equal(TempValA, Object.ValueA)
+ShR(TempValA, 2)
+Equal(TempValB, Object.PropertyValue)
+ShL(TempValB, 1)
+Add(TempValA, TempValB)
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(8, 10, -4, -5, 229, 13)
+SpriteFrame(8, 10, -4, -5, 238, 13)
+SpriteFrame(8, 10, -4, -5, 229, 24)
+SpriteFrame(8, 10, -4, -5, 238, 24)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(8, 10, -4, -5, 229, 13)
+CreateTempObject(33, 0, 0, 0)

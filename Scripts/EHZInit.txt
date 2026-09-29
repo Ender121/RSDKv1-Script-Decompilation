@@ -1,0 +1,20 @@
+# EHZInit.rsf  (159 bytes) - OK
+
+--- SubMain ---
+SetBGDeformation(3, 3, 2, 0, 0, 0)
+CopyGfx(16, 16, 1, 1, 23, 288, 6, 4)
+Equal(Object.Type, 0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+EndSub(0)
+
+--- SubDraw ---
+EndSub(0)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 0, 0)
+CreateTempObject(44, 0, 0, 0)

@@ -1,0 +1,35 @@
+# EGZBossLeg.rsf  (230 bytes) - OK
+
+--- SubMain ---
+switch(Object.ValueA, 0)
+Add(Object.ValueC, Object.ValueB)
+Equal(TempValA, Object.ValueC)
+ShR(TempValA, 7)
+Add(Object.XPos, TempValA)
+ShL(TempValA, 7)
+Sub(Object.ValueC, TempValA)
+Add(Object.ValueD, 16)
+Add(Object.ValueE, Object.ValueD)
+Equal(TempValA, Object.ValueE)
+ShR(TempValA, 7)
+Add(Object.YPos, TempValA)
+ShL(TempValA, 7)
+Sub(Object.ValueE, TempValA)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 92
+    case 1: -> pos 6 (line 1)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+DrawSprite(0)
+
+--- SubDraw ---
+SpriteFrame(8, 8, -4, -4, 160, 43)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(8, 8, -4, -4, 160, 43)

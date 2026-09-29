@@ -1,0 +1,39 @@
+# BS1Goal.rsf  (289 bytes) - OK
+
+--- SubMain ---
+EndSub(0)
+
+--- SubPlayerInteraction ---
+switch(Object.ValueA, 0)
+TouchCollision(-13, -13, 13, 13)
+switch(CheckResult, 0)
+GetObjectValue(0, 4, 2)
+PlaySfx(35, 0)
+end switch(0)
+end switch(0)
+BlockCollision(-12, -12, 12, 12)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 36
+    case 0: -> pos 6 (line 1)
+switch @pos 15: default -> pos 0 (line 0), end -> pos 33
+    case 1: -> pos 21 (line 4)
+
+--- SubUnknown3 ---
+HandleBonusMovement(AngleTimer, Object.ValueD, Object.ValueE)
+Equal(TempValA, RingAni)
+Equal(TempValB, TempValA)
+ShR(TempValB, 1)
+ShL(TempValB, 1)
+Sub(TempValA, TempValB)
+DrawSprite(TempValA)
+Equal(Object.XPos, Object.ValueD)
+Equal(Object.YPos, Object.ValueE)
+
+--- SubDraw ---
+SpriteFrame(24, 24, -12, -12, 26, 199)
+SpriteFrame(24, 24, -12, -12, 26, 224)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(24, 24, -12, -12, 26, 199)

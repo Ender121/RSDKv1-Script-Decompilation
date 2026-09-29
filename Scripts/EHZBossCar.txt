@@ -1,0 +1,136 @@
+# EHZBossCar.rsf  (972 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueA)
+LABEL 1:
+Dec(Object.XPos)
+Dec(Object.XPos[3])
+Equal(Object.YPos[3], Object.YPos)
+Add(Object.YPos[3], 8)
+Inc(Object.ValueB)
+ObjectFloorGrip(0, 0, 28)
+CheckEqual(Object.ValueB, 256)
+Add(CheckResult, 5)
+goto(CheckResult)
+LABEL 6:
+Equal(Object.ValueA[-1], 0)
+Equal(Object.ValueA[1], 0)
+Equal(Object.ValueA[2], 0)
+Equal(Object.ValueA[3], 0)
+Equal(Object.ValueA, 0)
+Equal(Object.ValueB, 0)
+LABEL 5:
+goto(0)
+LABEL 2:
+Sub(Object.XPos, 2)
+ObjectFloorGrip(0, 0, 28)
+Equal(Object.XPos[-2], Object.XPos)
+Equal(Object.YPos[-2], Object.YPos)
+Sub(Object.YPos[-2], 12)
+Equal(Object.XPos[-3], Object.XPos)
+Equal(Object.YPos[-3], Object.YPos)
+Sub(Object.YPos[-3], 12)
+Equal(Object.YPos[-4], Object.YPos[-3])
+Sub(Object.YPos[-4], 16)
+Sub(Object.XPos[-4], 2)
+CheckLower(Object.XPos, 10256)
+Add(CheckResult, 7)
+goto(CheckResult)
+LABEL 8:
+Equal(Object.ValueA, 3)
+Equal(Object.ValueC, 1)
+Equal(Object.ValueC[-3], 1)
+Equal(Object.XPos[-4], Object.XPos)
+Sub(Object.XPos[-4], 10)
+Equal(Object.XPos[3], Object.XPos)
+Equal(Object.ValueD[3], 2)
+Add(Object.XPos[3], 52)
+CheckEqual(Object.ValueD[-3], 7)
+Add(CheckResult, 13)
+goto(CheckResult)
+LABEL 14:
+Equal(Object.ValueD[3], 4)
+Equal(Object.ValueA[3], 2)
+LABEL 13:
+LABEL 7:
+goto(0)
+LABEL 3:
+Add(Object.XPos, 2)
+ObjectFloorGrip(0, 0, 28)
+Equal(Object.XPos[-2], Object.XPos)
+Equal(Object.YPos[-2], Object.YPos)
+Sub(Object.YPos[-2], 12)
+Equal(Object.XPos[-3], Object.XPos)
+Equal(Object.YPos[-3], Object.YPos)
+Sub(Object.YPos[-3], 12)
+Equal(Object.YPos[-4], Object.YPos[-3])
+Sub(Object.YPos[-4], 16)
+Add(Object.XPos[-4], 2)
+CheckGreater(Object.XPos, 10976)
+Add(CheckResult, 9)
+goto(CheckResult)
+LABEL 10:
+Equal(Object.ValueA, 2)
+Equal(Object.ValueC, 0)
+Equal(Object.ValueC[-3], 0)
+Equal(Object.ValueA[-1], 3)
+Equal(Object.ValueA[1], 3)
+Equal(Object.ValueA[2], 3)
+Equal(Object.ValueC[-1], 0)
+Equal(Object.ValueC[1], 0)
+Equal(Object.ValueC[2], 0)
+Equal(Object.XPos[-1], 10936)
+Equal(Object.XPos[1], 11016)
+Equal(Object.XPos[2], 10972)
+Equal(Object.XPos[-4], Object.XPos)
+Add(Object.XPos[-4], 9)
+Equal(Object.XPos[3], Object.XPos)
+Equal(Object.ValueD[3], -2)
+Sub(Object.XPos[3], 52)
+CheckEqual(Object.ValueD[-3], 7)
+Add(CheckResult, 15)
+goto(CheckResult)
+LABEL 16:
+Equal(Object.ValueD[3], -4)
+Equal(Object.ValueA[3], 2)
+LABEL 15:
+LABEL 9:
+goto(0)
+LABEL 4:
+Add(Object.ValueB, 20)
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 7)
+Add(Object.YPos, TempValA)
+Equal(Object.YPos[-2], Object.YPos)
+Sub(Object.YPos[-2], 12)
+Equal(Object.YPos[-3], Object.YPos)
+Sub(Object.YPos[-3], 12)
+Equal(Object.YPos[-4], Object.YPos[-3])
+Sub(Object.YPos[-4], 16)
+ObjectFloorCollision(0, 0, 16)
+Add(CheckResult, 11)
+goto(CheckResult)
+LABEL 12:
+Equal(Object.ValueA[-1], 5)
+Equal(Object.ValueF[-1], -2)
+Equal(Object.ValueA[1], 5)
+Equal(Object.ValueF[1], 2)
+Equal(Object.ValueA[2], 5)
+Equal(Object.ValueF[2], 2)
+Equal(Object.ValueA, 0)
+Equal(Object.ValueB, 0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+DrawSprite(Object.ValueC)
+
+--- SubDraw ---
+SpriteFrame(93, 32, -46, -16, 109, 68)
+SpriteFrame(93, 32, -46, -16, 109, 35)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(93, 32, -46, -16, 109, 68)
+CreateTempObject(40, 0, 0, 0)

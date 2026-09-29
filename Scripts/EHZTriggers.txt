@@ -1,0 +1,49 @@
+# EHZTriggers.rsf  (332 bytes) - OK
+
+--- SubMain ---
+TouchCollision(-32, -256, 32, 256)
+Add(CheckResult, 3)
+goto(CheckResult)
+LABEL 4:
+goto(Object.PropertyValue)
+LABEL 0:
+Equal(XBoundary1, 10656)
+Equal(XBoundary2, 10976)
+Equal(Object.Type, 0)
+goto(3)
+LABEL 1:
+Equal(YBoundary2, 1136)
+Equal(XBoundary1, 10384)
+Equal(XBoundary2, 10880)
+Equal(Object.Type, 0)
+goto(3)
+LABEL 2:
+PlayMusic(1)
+Equal(Object.ValueA[-3], 1)
+Equal(Object.ValueA[-2], 1)
+Equal(Object.ValueA[-5], 1)
+Equal(Object.ValueA[-4], 1)
+Equal(Object.ValueA[-7], 1)
+Equal(Object.Priority[-1], 1)
+Equal(Object.Priority[-2], 1)
+Equal(Object.Priority[-3], 1)
+Equal(Object.Priority[-4], 1)
+Equal(Object.Priority[-5], 1)
+Equal(Object.Priority[-6], 1)
+Equal(Object.Priority[-7], 1)
+Equal(Object.Type, 0)
+goto(3)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+EndSub(0)
+
+--- SubDraw ---
+EndSub(0)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 0, 0)
+CreateTempObject(43, 0, 0, 0)

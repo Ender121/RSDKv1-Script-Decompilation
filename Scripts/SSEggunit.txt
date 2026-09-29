@@ -1,0 +1,17 @@
+# SSEggunit.rsf  (114 bytes) - OK
+
+--- SubMain ---
+HandleMode7Movement(0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+DrawSpriteMode7(0)
+
+--- SubDraw ---
+SpriteFrame(64, 52, -32, -26, 1, 1)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(64, 52, -32, -26, 1, 1)

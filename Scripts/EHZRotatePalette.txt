@@ -1,0 +1,35 @@
+# EHZRotatePalette.rsf  (262 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueF)
+LABEL 0:
+Equal(Object.Priority, 2)
+Inc(Object.ValueF)
+goto(2)
+LABEL 1:
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 4)
+Add(CheckResult, 3)
+goto(CheckResult)
+LABEL 4:
+Inc(DeformationPosB1)
+Equal(Object.ValueB, 0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+Add(Object.ValueA, 1)
+CheckEqual(Object.ValueA, 8)
+goto(CheckResult)
+LABEL 1:
+Equal(Object.ValueA, 0)
+RotatePalette(149, 152, 1)
+
+--- SubDraw ---
+SpriteFrame(16, 16, -8, -8, 1, 18)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 1, 18)
+CreateTempObject(34, 0, 0, 0)

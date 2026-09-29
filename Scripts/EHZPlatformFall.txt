@@ -1,0 +1,128 @@
+# EHZPlatformFall.rsf  (870 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueF)
+LABEL 0:
+Equal(Object.ValueC, Object.YPos)
+Inc(Object.ValueF)
+goto(5)
+LABEL 2:
+Inc(Object.ValueD)
+CheckEqual(Object.ValueD, 60)
+Add(CheckResult, 6)
+goto(CheckResult)
+LABEL 7:
+Equal(Object.ValueD, 0)
+Inc(Object.ValueF)
+Equal(Object.ValueB, 0)
+Equal(Object.ValueE, 0)
+LABEL 6:
+goto(5)
+LABEL 3:
+Inc(Object.ValueD)
+Equal(TempValA, Object.YPos)
+Sub(TempValA, Player.YPos)
+CheckGreater(TempValA, 200)
+Add(CheckResult, 8)
+goto(CheckResult)
+LABEL 9:
+Equal(Object.ValueD, 0)
+Inc(Object.ValueF)
+Equal(Object.Priority, 1)
+LABEL 8:
+goto(5)
+LABEL 4:
+Equal(TempValA, Object.XPos)
+Sub(TempValA, Player.XPos)
+CheckLower(TempValA, 0)
+Add(CheckResult, 10)
+goto(CheckResult)
+LABEL 11:
+Mul(TempValA, -1)
+LABEL 10:
+CheckGreater(TempValA, 360)
+Add(CheckResult, 12)
+goto(CheckResult)
+LABEL 13:
+Equal(Object.ValueF, 1)
+Equal(Object.YPos, Object.ValueC)
+Equal(Object.Priority, 0)
+LABEL 12:
+LABEL 5:
+LABEL 1:
+Equal(Object.ValueB, 0)
+
+--- SubPlayerInteraction ---
+CheckLower(Object.ValueF, 4)
+Add(CheckResult, 5)
+goto(CheckResult)
+LABEL 6:
+PlatformCollision(-32, -12, 32, 16)
+goto(7)
+LABEL 5:
+Equal(CheckResult, 0)
+LABEL 7:
+Add(CheckResult, 8)
+goto(CheckResult)
+LABEL 9:
+goto(Object.ValueF)
+LABEL 0:
+LABEL 1:
+Inc(Object.ValueF)
+goto(4)
+LABEL 2:
+Equal(Object.ValueB, 1)
+CheckLower(Object.ValueE, 4)
+Add(CheckResult, 10)
+goto(CheckResult)
+LABEL 11:
+MovePlayerY(1)
+LABEL 10:
+goto(4)
+LABEL 3:
+Equal(TempValA, Object.ValueD)
+ShR(TempValA, 2)
+MovePlayerY(TempValA)
+
+--- SubUnknown3 ---
+CheckEqual(Object.ValueF, 3)
+goto(CheckResult)
+LABEL 1:
+Equal(TempValA, Object.ValueD)
+ShR(TempValA, 2)
+Add(Object.YPos, TempValA)
+goto(6)
+LABEL 0:
+CheckEqual(Object.ValueB, 1)
+Add(CheckResult, 2)
+goto(CheckResult)
+LABEL 3:
+CheckLower(Object.ValueE, 4)
+Add(CheckResult, 4)
+goto(CheckResult)
+LABEL 5:
+Inc(Object.ValueE)
+Inc(Object.YPos)
+LABEL 4:
+goto(6)
+LABEL 2:
+CheckGreater(Object.ValueE, 0)
+Add(CheckResult, 6)
+goto(CheckResult)
+LABEL 7:
+Sub(Object.ValueE, 1)
+Sub(Object.YPos, 1)
+LABEL 6:
+CheckLower(Object.ValueF, 4)
+Add(CheckResult, 8)
+goto(CheckResult)
+LABEL 9:
+DrawSprite(0)
+
+--- SubDraw ---
+SpriteFrame(64, 32, -32, -16, 18, 1)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(64, 32, -32, -16, 18, 1)
+CreateTempObject(27, 0, 0, 0)

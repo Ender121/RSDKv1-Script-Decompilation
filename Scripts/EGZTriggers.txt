@@ -1,0 +1,72 @@
+# EGZTriggers.rsf  (471 bytes) - OK
+
+--- SubMain ---
+TouchCollision(-32, -256, 32, 256)
+switch(CheckResult, 0)
+switch(Object.PropertyValue, 0)
+Equal(XBoundary1, 14384)
+Equal(XBoundary2, 14704)
+Equal(YBoundary2, 1088)
+Equal(Object.Type, 0)
+break(0)
+Equal(YBoundary2, 960)
+Equal(XBoundary1, 15584)
+Equal(XBoundary2, 15904)
+Equal(Object.Type, 0)
+break(0)
+Equal(TempValA, Object.XPos[-1])
+Sub(TempValA, 160)
+Equal(XBoundary1, TempValA)
+Equal(YBoundary1, 936)
+Equal(YBoundary2, 1176)
+Add(TempValA, 320)
+Equal(XBoundary2, TempValA)
+Equal(Object.Type, 0)
+break(0)
+Equal(Object.PropertyValue, 4)
+Equal(Object.ValueA, 1)
+PlayMusic(1)
+end switch(0)
+end switch(0)
+switch(Object.ValueA, 0)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 120)
+switch(CheckResult, 0)
+Equal(Object.ValueA, 0)
+Equal(Object.ValueB, 0)
+Sub(Object.Type[-13], 1)
+Equal(Object.ValueA[-13], 6)
+Equal(Object.ValueA[-4], 2)
+Equal(Object.ValueA[-1], 2)
+Equal(Object.ValueB[-12], 584)
+Equal(Object.ValueB[-9], 184)
+Equal(Object.Type, 0)
+PlayStageSfx(1, 0)
+end switch(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 9: default -> pos 0 (line 0), end -> pos 147
+    case 1: -> pos 15 (line 2)
+switch @pos 15: default -> pos 0 (line 0), end -> pos 144
+    case 0: -> pos 21 (line 4)
+    case 1: -> pos 48 (line 10)
+    case 2: -> pos 75 (line 16)
+    case 3: -> pos 129 (line 26)
+switch @pos 150: default -> pos 0 (line 0), end -> pos 234
+    case 1: -> pos 156 (line 33)
+switch @pos 166: default -> pos 0 (line 0), end -> pos 231
+    case 1: -> pos 172 (line 37)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+EndSub(0)
+
+--- SubDraw ---
+EndSub(0)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 39, 304)

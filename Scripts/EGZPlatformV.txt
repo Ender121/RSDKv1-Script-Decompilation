@@ -1,0 +1,34 @@
+# EGZPlatformV.rsf  (262 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueF)
+LABEL 0:
+Equal(Object.ValueC, Object.YPos)
+Add(Object.ValueF, 1)
+goto(2)
+LABEL 1:
+Equal(TempValA, AngleTimer)
+Add(TempValA, Object.PropertyValue)
+ShL(TempValA, 1)
+SinY(Object.ValueD, Object.ValueC, TempValA, 3)
+
+--- SubPlayerInteraction ---
+PlatformCollision(-32, -16, 32, 16)
+goto(CheckResult)
+LABEL 0:
+goto(2)
+LABEL 1:
+MovePlayerY(Object.ValueD)
+
+--- SubUnknown3 ---
+Add(Object.YPos, Object.ValueD)
+Equal(Object.ValueD, 0)
+DrawSprite(0)
+
+--- SubDraw ---
+SpriteFrame(64, 32, -32, -16, 18, 1)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(64, 32, -32, -16, 18, 1)
+CreateTempObject(27, 0, 0, 0)

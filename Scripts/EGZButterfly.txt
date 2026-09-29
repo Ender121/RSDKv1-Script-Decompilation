@@ -1,0 +1,76 @@
+# EGZButterfly.rsf  (591 bytes) - OK
+
+--- SubMain ---
+Sin(Object.ValueA, Object.ValueF)
+Add(Object.ValueB, Object.ValueA)
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 9)
+Add(Object.XPos, TempValA)
+ShL(TempValA, 9)
+Sub(Object.ValueB, TempValA)
+Equal(TempValA, Object.ValueF)
+ShL(TempValA, 2)
+Cos(Object.ValueC, TempValA)
+ShL(Object.ValueC, 1)
+Add(Object.ValueD, Object.ValueC)
+Equal(TempValA, Object.ValueD)
+ShR(TempValA, 9)
+Add(Object.YPos, TempValA)
+ShL(TempValA, 9)
+Sub(Object.ValueD, TempValA)
+Inc(Object.ValueE)
+CheckEqual(Object.ValueE, 32)
+switch(CheckResult, 0)
+Equal(Object.ValueE, 0)
+end switch(0)
+Inc(Object.ValueF)
+CheckEqual(Object.ValueF, 512)
+switch(CheckResult, 0)
+Equal(Object.ValueF, 0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 123: default -> pos 0 (line 0), end -> pos 135
+    case 1: -> pos 129 (line 20)
+switch @pos 148: default -> pos 0 (line 0), end -> pos 160
+    case 1: -> pos 154 (line 26)
+
+--- SubPlayerInteraction ---
+HurtCollision(-12, -12, 12, 12)
+switch(CheckResult, 0)
+CreateTempObject(23, 1, Object.XPos, Object.YPos)
+CreateTempObject(20, 0, Object.XPos, Object.YPos)
+Equal(Object.Type, 0)
+PlaySfx(5, 0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 9: default -> pos 0 (line 0), end -> pos 48
+    case 2: -> pos 15 (line 2)
+
+--- SubUnknown3 ---
+Equal(TempValA, Object.ValueE)
+ShR(TempValA, 3)
+CheckGreater(Object.ValueA, 0)
+switch(CheckResult, 0)
+Add(TempValA, 4)
+end switch(0)
+DrawSprite(TempValA)
+
+-- switch/jump tables --
+switch @pos 19: default -> pos 0 (line 0), end -> pos 31
+    case 1: -> pos 25 (line 4)
+
+--- SubDraw ---
+SpriteFrame(28, 27, -12, -17, 195, 106)
+SpriteFrame(28, 17, -12, -7, 195, 134)
+SpriteFrame(28, 22, -12, -7, 227, 135)
+SpriteFrame(28, 17, -12, -7, 195, 134)
+SpriteFrame(28, 27, -16, -17, 227, 66)
+SpriteFrame(28, 17, -16, -7, 227, 94)
+SpriteFrame(28, 22, -16, -7, 227, 112)
+SpriteFrame(28, 17, -16, -7, 227, 94)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(28, 27, -16, -17, 227, 66)

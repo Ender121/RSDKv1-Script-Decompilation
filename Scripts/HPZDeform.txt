@@ -1,0 +1,42 @@
+# HPZDeform.rsf  (371 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueF)
+LABEL 0:
+Equal(Object.Priority, 2)
+SetBGDeformation(4, 128, 6, 0, 0, 0)
+SetBGDeformation(2, 32, 6, 1, 16, 16)
+SetBGDeformation(2, 32, -6, 1, 48, 16)
+SetBGDeformation(2, 32, 6, 1, 96, 16)
+SetBGDeformation(2, 32, -6, 1, 128, 16)
+SetWaterColour(0, 38, 0, 96)
+Equal(WaterLevel, 272)
+Inc(Object.ValueF)
+goto(2)
+LABEL 1:
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 2)
+Add(CheckResult, 3)
+goto(CheckResult)
+LABEL 4:
+Inc(DeformationPosB2)
+Inc(DeformationPosF2)
+Equal(Object.ValueB, 0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+Add(Object.ValueA, 1)
+CheckEqual(Object.ValueA, 8)
+goto(CheckResult)
+LABEL 1:
+Equal(Object.ValueA, 0)
+
+--- SubDraw ---
+SpriteFrame(16, 16, -8, -8, 1, 18)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 1, 18)
+CreateTempObject(34, 0, 0, 0)

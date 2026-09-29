@@ -1,0 +1,17 @@
+# EGZRatchetBottom.rsf  (114 bytes) - OK
+
+--- SubMain ---
+EndSub(0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+DrawSprite(0)
+
+--- SubDraw ---
+SpriteFrame(48, 48, -24, -24, 1, 68)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(48, 48, -24, -24, 1, 68)

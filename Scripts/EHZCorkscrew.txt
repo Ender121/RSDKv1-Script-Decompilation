@@ -1,0 +1,41 @@
+# EHZCorkscrew.rsf  (291 bytes) - OK
+
+--- SubMain ---
+EndSub(0)
+
+--- SubPlayerInteraction ---
+TouchCollision(-17, -64, 0, 8)
+goto(CheckResult)
+LABEL 1:
+Equal(TempValA, Object.PropertyValue)
+Add(TempValA, 2)
+goto(TempValA)
+LABEL 2:
+HandleCorkscrewEnd(0)
+goto(0)
+LABEL 3:
+HandleCorkscrewStart(Object.XPos, Object.YPos, 384, 36)
+LABEL 0:
+TouchCollision(0, -64, 17, 8)
+Add(CheckResult, 4)
+goto(CheckResult)
+LABEL 5:
+Equal(TempValA, Object.PropertyValue)
+Add(TempValA, 6)
+goto(TempValA)
+LABEL 6:
+HandleCorkscrewStart(Object.XPos, Object.YPos, 384, 36)
+goto(4)
+LABEL 7:
+HandleCorkscrewEnd(0)
+
+--- SubUnknown3 ---
+EndSub(0)
+
+--- SubDraw ---
+EndSub(0)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 0, 0)
+CreateTempObject(45, 0, 0, 0)

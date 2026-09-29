@@ -1,0 +1,18 @@
+# DHZChain.rsf  (127 bytes) - OK
+
+--- SubMain ---
+EndSub(0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+DrawSprite(0)
+
+--- SubDraw ---
+SpriteFrame(16, 16, -8, -8, 1, 1)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 1, 1)
+CreateTempObject(26, 0, 0, 0)

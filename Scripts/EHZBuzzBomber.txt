@@ -1,0 +1,184 @@
+# EHZBuzzBomber.rsf  (1442 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueA)
+LABEL 0:
+Sub(Object.XPos, 1)
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 256)
+Add(CheckResult, 7)
+goto(CheckResult)
+LABEL 8:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueA, 4)
+LABEL 7:
+goto(6)
+LABEL 1:
+Add(Object.XPos, 1)
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 256)
+Add(CheckResult, 9)
+goto(CheckResult)
+LABEL 10:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueA, 5)
+LABEL 9:
+goto(6)
+LABEL 2:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 32)
+Add(CheckResult, 11)
+goto(CheckResult)
+LABEL 12:
+Equal(Object.ValueB, Object.ValueD)
+Equal(Object.ValueA, 0)
+Equal(Object.ValueF, 1)
+Equal(TempValA, Object.XPos)
+Equal(TempValB, Object.YPos)
+Add(TempValA, 16)
+Add(TempValB, 23)
+CreateTempObject(Object.Type, 0, TempValA, TempValB)
+Inc(TempObject.Type)
+LABEL 11:
+goto(6)
+LABEL 3:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 32)
+Add(CheckResult, 13)
+goto(CheckResult)
+LABEL 14:
+Equal(Object.ValueB, Object.ValueD)
+Equal(Object.ValueA, 1)
+Equal(Object.ValueF, 1)
+Equal(TempValA, Object.XPos)
+Equal(TempValB, Object.YPos)
+Sub(TempValA, 22)
+Add(TempValB, 23)
+CreateTempObject(Object.Type, 1, TempValA, TempValB)
+Inc(TempObject.Type)
+LABEL 13:
+goto(6)
+LABEL 4:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 64)
+Add(CheckResult, 15)
+goto(CheckResult)
+LABEL 16:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueA, 1)
+Equal(Object.ValueF, 0)
+LABEL 15:
+goto(6)
+LABEL 5:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 64)
+Add(CheckResult, 17)
+goto(CheckResult)
+LABEL 18:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueA, 0)
+Equal(Object.ValueF, 0)
+LABEL 17:
+LABEL 6:
+Add(Object.ValueC, 1)
+CheckEqual(Object.ValueC, 4)
+Add(CheckResult, 19)
+goto(CheckResult)
+LABEL 20:
+Equal(Object.ValueC, 0)
+
+--- SubPlayerInteraction ---
+HurtCollision(-24, -8, 24, 8)
+Add(CheckResult, 7)
+goto(CheckResult)
+LABEL 9:
+Equal(Object.Type, 0)
+CreateTempObject(23, 0, Object.XPos, Object.YPos)
+CreateTempObject(20, 0, Object.XPos, Object.YPos)
+PlaySfx(5, 0)
+LABEL 8:
+LABEL 7:
+goto(Object.ValueA)
+LABEL 0:
+CheckPlayerDiagonal(Object.XPos, Object.YPos, 0)
+Add(CheckResult, 10)
+Add(CheckResult, Object.ValueF)
+Add(CheckResult, Object.ValueF)
+goto(CheckResult)
+LABEL 11:
+Equal(Object.ValueA, 2)
+Equal(Object.ValueD, Object.ValueB)
+Equal(Object.ValueB, 0)
+LABEL 12:
+LABEL 13:
+LABEL 10:
+goto(5)
+LABEL 1:
+CheckPlayerDiagonal(Object.XPos, Object.YPos, 1)
+Add(CheckResult, 14)
+Add(CheckResult, Object.ValueF)
+Add(CheckResult, Object.ValueF)
+goto(CheckResult)
+LABEL 15:
+Equal(Object.ValueA, 3)
+Equal(Object.ValueD, Object.ValueB)
+Equal(Object.ValueB, 0)
+LABEL 14:
+LABEL 16:
+LABEL 17:
+goto(5)
+
+--- SubUnknown3 ---
+Equal(TempValA, Object.ValueC)
+ShR(TempValA, 1)
+goto(Object.ValueA)
+LABEL 0:
+Add(TempValA, 4)
+DrawSprite(0)
+DrawSprite(TempValA)
+goto(6)
+LABEL 1:
+Add(TempValA, 6)
+DrawSprite(1)
+DrawSprite(TempValA)
+goto(6)
+LABEL 2:
+Add(TempValA, 4)
+DrawSprite(2)
+DrawSprite(TempValA)
+goto(6)
+LABEL 3:
+Add(TempValA, 6)
+DrawSprite(3)
+DrawSprite(TempValA)
+goto(6)
+LABEL 4:
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 5)
+Add(TempValA, 8)
+DrawSprite(TempValA)
+goto(6)
+LABEL 5:
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 5)
+Add(TempValA, 10)
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(48, 16, -24, -8, 180, 1)
+SpriteFrame(48, 16, -24, -8, 180, 50)
+SpriteFrame(42, 31, -24, -8, 180, 18)
+SpriteFrame(42, 31, -18, -8, 180, 67)
+SpriteFrame(7, 5, 5, -8, 229, 1)
+SpriteFrame(6, 5, 5, -8, 237, 1)
+SpriteFrame(7, 5, -12, -8, 229, 7)
+SpriteFrame(6, 5, -12, -8, 237, 7)
+SpriteFrame(48, 16, -24, -8, 180, 1)
+SpriteFrame(48, 16, -24, -8, 180, 50)
+SpriteFrame(48, 16, -24, -8, 180, 50)
+SpriteFrame(48, 16, -24, -8, 180, 1)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(48, 16, -24, -8, 180, 1)
+CreateTempObject(32, 0, 0, 0)

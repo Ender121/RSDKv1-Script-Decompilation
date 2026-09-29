@@ -1,0 +1,68 @@
+# BS1Ring.rsf  (570 bytes) - OK
+
+--- SubMain ---
+switch(Object.ValueA, 0)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 72)
+switch(CheckResult, 0)
+Equal(Object.Type, 0)
+end switch(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 31
+    case 1: -> pos 6 (line 1)
+switch @pos 16: default -> pos 0 (line 0), end -> pos 28
+    case 1: -> pos 22 (line 5)
+
+--- SubPlayerInteraction ---
+switch(Object.ValueA, 0)
+TouchCollision(-8, -8, 8, 8)
+switch(CheckResult, 0)
+Equal(Object.ValueA, 1)
+Equal(Object.ValueB, 48)
+Inc(Player.Rings)
+PlaySfx(1, 0)
+end switch(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 45
+    case 0: -> pos 6 (line 1)
+switch @pos 15: default -> pos 0 (line 0), end -> pos 42
+    case 1: -> pos 21 (line 4)
+
+--- SubUnknown3 ---
+HandleBonusMovement(AngleTimer, Object.ValueD, Object.ValueE)
+switch(Object.ValueA, 0)
+DrawSprite(RingAni)
+break(0)
+Equal(TempValA, Object.ValueB)
+Div(TempValA, 6)
+DrawSprite(TempValA)
+end switch(0)
+Equal(Object.XPos, Object.ValueD)
+Equal(Object.YPos, Object.ValueE)
+
+-- switch/jump tables --
+switch @pos 10: default -> pos 0 (line 0), end -> pos 40
+    case 0: -> pos 16 (line 2)
+    case 1: -> pos 23 (line 5)
+
+--- SubDraw ---
+SpriteFrame(16, 16, -8, -8, 0, 0)
+SpriteFrame(16, 16, -8, -8, 0, 16)
+SpriteFrame(16, 16, -8, -8, 0, 32)
+SpriteFrame(16, 16, -8, -8, 0, 48)
+SpriteFrame(16, 16, -8, -8, 0, 64)
+SpriteFrame(16, 16, -8, -8, 0, 80)
+SpriteFrame(16, 16, -8, -8, 0, 96)
+SpriteFrame(16, 16, -8, -8, 0, 112)
+SpriteFrame(16, 16, -8, -8, 0, 128)
+SpriteFrame(16, 16, -8, -8, 0, 144)
+SpriteFrame(16, 16, -8, -8, 0, 160)
+SpriteFrame(16, 16, -8, -8, 0, 176)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 0, 0)

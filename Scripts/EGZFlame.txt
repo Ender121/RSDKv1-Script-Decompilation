@@ -1,0 +1,50 @@
+# EGZFlame.rsf  (399 bytes) - OK
+
+--- SubMain ---
+Add(Object.YPos, 3)
+Inc(Object.ValueB)
+Add(Object.ValueD, Object.ValueC)
+Equal(TempValA, Object.ValueD)
+ShR(TempValA, 9)
+Add(Object.XPos, TempValA)
+ShL(TempValA, 9)
+Sub(Object.ValueD, TempValA)
+CheckEqual(Object.ValueB, 4)
+switch(CheckResult, 0)
+Inc(Object.ValueA)
+Equal(Object.ValueB, 0)
+end switch(0)
+CheckEqual(Object.ValueA, 6)
+switch(CheckResult, 0)
+Equal(Object.Type, 0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 56: default -> pos 0 (line 0), end -> pos 72
+    case 1: -> pos 62 (line 10)
+switch @pos 81: default -> pos 0 (line 0), end -> pos 93
+    case 1: -> pos 87 (line 16)
+
+--- SubPlayerInteraction ---
+HurtCollisionForce(-8, -11, 8, 11)
+
+--- SubUnknown3 ---
+Equal(TempValA, Object.ValueA)
+ShR(TempValA, 1)
+ShL(TempValA, 1)
+Equal(TempValB, Object.ValueB)
+ShR(TempValB, 1)
+Add(TempValA, TempValB)
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(14, 16, -7, -8, 174, 66)
+SpriteFrame(14, 16, -7, -8, 189, 66)
+SpriteFrame(16, 21, -8, -10, 204, 66)
+SpriteFrame(16, 21, -8, -10, 221, 66)
+SpriteFrame(21, 24, -10, -12, 204, 88)
+SpriteFrame(21, 24, -10, -12, 226, 88)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(21, 24, -10, -12, 204, 88)

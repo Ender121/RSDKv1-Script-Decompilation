@@ -1,0 +1,41 @@
+# EHZCoco.rsf  (283 bytes) - OK
+
+--- SubMain ---
+Add(Object.ValueA, 20)
+Add(Object.ValueB, Object.ValueA)
+Equal(TempValA, Object.ValueA)
+ShR(TempValA, 7)
+Add(Object.YPos, TempValA)
+ShL(TempValA, 7)
+Sub(Object.ValueB, TempValA)
+switch(Object.PropertyValue, 0)
+Sub(Object.XPos, 1)
+break(0)
+Add(Object.XPos, 1)
+end switch(0)
+Inc(Object.ValueC)
+CheckEqual(Object.ValueC, 180)
+switch(CheckResult, 0)
+Equal(Object.Type, 0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 46: default -> pos 0 (line 0), end -> pos 67
+    case 0: -> pos 52 (line 8)
+    case 1: -> pos 61 (line 11)
+switch @pos 80: default -> pos 0 (line 0), end -> pos 92
+    case 1: -> pos 86 (line 17)
+
+--- SubPlayerInteraction ---
+HurtCollisionForce(-6, -7, 6, 6)
+
+--- SubUnknown3 ---
+DrawSprite(0)
+
+--- SubDraw ---
+SpriteFrame(12, 13, -6, -7, 49, 34)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(12, 13, -6, -7, 49, 34)
+CreateTempObject(29, 0, 0, 0)

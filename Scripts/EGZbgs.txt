@@ -1,0 +1,43 @@
+# EGZbgs.rsf  (299 bytes) - OK
+
+--- SubMain ---
+CheckGreater(Player.XPos, Object.XPos)
+Equal(Object.ValueA, Object.PropertyValue)
+switch(CheckResult, 0)
+ShR(Object.ValueA, 4)
+break(0)
+Equal(TempValA, Object.ValueA)
+ShR(TempValA, 4)
+ShL(TempValA, 4)
+Sub(Object.ValueA, TempValA)
+end switch(0)
+switch(Object.ValueA, 0)
+SetBackground(1, 9, 0, 0, 3)
+break(0)
+SetBackground(2, 9, 0, 0, 3)
+break(0)
+SetBackground(4, 3, 0, 0, 3)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 14: default -> pos 0 (line 0), end -> pos 55
+    case 0: -> pos 20 (line 3)
+    case 1: -> pos 29 (line 6)
+switch @pos 58: default -> pos 0 (line 0), end -> pos 103
+    case 1: -> pos 64 (line 13)
+    case 2: -> pos 78 (line 16)
+    case 3: -> pos 92 (line 19)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+EndSub(0)
+
+--- SubDraw ---
+EndSub(0)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 39, 304)
+CreateTempObject(30, 0, 0, 0)

@@ -1,0 +1,60 @@
+# BS1BlockR.rsf  (435 bytes) - OK
+
+--- SubMain ---
+switch(Object.ValueA, 0)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 15)
+switch(CheckResult, 0)
+Equal(Object.ValueA, 0)
+Equal(Object.ValueB, 0)
+end switch(0)
+break(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 40
+    case 1: -> pos 6 (line 1)
+switch @pos 16: default -> pos 0 (line 0), end -> pos 34
+    case 1: -> pos 22 (line 5)
+
+--- SubPlayerInteraction ---
+TouchCollision(-13, -13, 13, 13)
+switch(Object.ValueA, 0)
+switch(CheckResult, 0)
+Equal(Object.ValueC, 0)
+break(0)
+switch(Object.ValueC, 0)
+PlayStageSfx(0, 0)
+Equal(Object.ValueA, 1)
+Equal(Object.ValueC, 1)
+SetObjectValue(0, 7, TempValA)
+Mul(TempValA, -1)
+GetObjectValue(0, 7, TempValA)
+end switch(0)
+end switch(0)
+end switch(0)
+BlockCollision(-12, -12, 12, 12)
+
+-- switch/jump tables --
+switch @pos 9: default -> pos 0 (line 0), end -> pos 81
+    case 0: -> pos 15 (line 2)
+switch @pos 15: default -> pos 0 (line 0), end -> pos 78
+    case 0: -> pos 21 (line 4)
+    case 1: -> pos 30 (line 7)
+switch @pos 30: default -> pos 0 (line 0), end -> pos 75
+    case 0: -> pos 36 (line 9)
+
+--- SubUnknown3 ---
+HandleBonusMovement(AngleTimer, Object.ValueD, Object.ValueE)
+DrawSprite(Object.ValueA)
+Equal(Object.XPos, Object.ValueD)
+Equal(Object.YPos, Object.ValueE)
+
+--- SubDraw ---
+SpriteFrame(24, 24, -12, -12, 1, 199)
+SpriteFrame(24, 24, -12, -12, 1, 224)
+SpriteFrame(24, 24, -12, -12, 1, 199)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(24, 24, -12, -12, 1, 199)

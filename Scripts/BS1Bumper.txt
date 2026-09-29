@@ -1,0 +1,50 @@
+# BS1Bumper.rsf  (357 bytes) - OK
+
+--- SubMain ---
+switch(Object.ValueA, 0)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 12)
+switch(CheckResult, 0)
+Equal(Object.ValueA, 0)
+Equal(Object.ValueB, 0)
+end switch(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 37
+    case 1: -> pos 6 (line 1)
+switch @pos 16: default -> pos 0 (line 0), end -> pos 34
+    case 1: -> pos 22 (line 5)
+
+--- SubPlayerInteraction ---
+BumperCollision(-14, -14, 14, 14)
+switch(Object.ValueA, 0)
+switch(CheckResult, 0)
+PlaySfx(33, 0)
+Equal(Object.ValueA, 1)
+Equal(Object.ValueB, 4)
+end switch(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 9: default -> pos 0 (line 0), end -> pos 41
+    case 0: -> pos 15 (line 2)
+switch @pos 15: default -> pos 0 (line 0), end -> pos 38
+    case 1: -> pos 21 (line 4)
+
+--- SubUnknown3 ---
+HandleBonusMovement(AngleTimer, Object.ValueD, Object.ValueE)
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 2)
+DrawSprite(TempValA)
+Equal(Object.XPos, Object.ValueD)
+Equal(Object.YPos, Object.ValueE)
+
+--- SubDraw ---
+SpriteFrame(28, 28, -14, -14, 101, 199)
+SpriteFrame(32, 32, -16, -16, 130, 199)
+SpriteFrame(24, 24, -12, -12, 101, 228)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(28, 28, -14, -14, 101, 199)

@@ -1,0 +1,62 @@
+# EGZDeform.rsf  (527 bytes) - OK
+
+--- SubMain ---
+switch(Object.ValueA, 0)
+CopyGfx(16, 16, 1, 1, 23, 288, 6, 4)
+SetBGDeformation(3, 32, 2, 0, 0, 0)
+SetBGDeformation(3, 8, 3, 1, 48, 8)
+SetBGDeformation(3, 8, 3, 1, 96, 8)
+SetBGDeformation(3, 8, 4, 1, 128, 8)
+SetBGDeformation(3, 8, -3, 1, 140, 8)
+SetBGDeformation(3, 8, 2, 1, 170, 16)
+SetBGDeformation(3, 8, 3, 1, 200, 8)
+SetBGDeformation(3, 8, 4, 1, 240, 8)
+Equal(TempValA, Object.PropertyValue)
+switch(TempValA, 0)
+SetBackground(4, 3, 0, 0, 3)
+Equal(Object.ValueA, 1)
+Equal(Object.Priority, 2)
+break(0)
+Equal(Object.Type, 0)
+end switch(0)
+break(0)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 3)
+switch(CheckResult, 0)
+Inc(DeformationPosB1)
+Equal(Object.ValueB, 0)
+end switch(0)
+break(0)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 3)
+switch(CheckResult, 0)
+Inc(DeformationPosB1)
+Equal(Object.ValueB, 0)
+end switch(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 239
+    case 0: -> pos 6 (line 1)
+    case 1: -> pos 178 (line 22)
+    case 2: -> pos 210 (line 31)
+switch @pos 134: default -> pos 0 (line 0), end -> pos 172
+    case 0: -> pos 140 (line 13)
+    case 1: -> pos 166 (line 18)
+switch @pos 188: default -> pos 0 (line 0), end -> pos 204
+    case 1: -> pos 194 (line 26)
+switch @pos 220: default -> pos 0 (line 0), end -> pos 236
+    case 1: -> pos 226 (line 35)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+EndSub(0)
+
+--- SubDraw ---
+SpriteFrame(16, 16, -8, -8, 1, 18)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 39, 304)

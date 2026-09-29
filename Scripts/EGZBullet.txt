@@ -1,0 +1,48 @@
+# EGZBullet.rsf  (340 bytes) - OK
+
+--- SubMain ---
+Add(Object.ValueB, Object.ValueA)
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 9)
+Add(Object.XPos, TempValA)
+ShL(TempValA, 9)
+Sub(Object.ValueB, TempValA)
+Add(Object.ValueC, 64)
+Add(Object.ValueD, Object.ValueC)
+Equal(TempValA, Object.ValueD)
+ShR(TempValA, 9)
+Add(Object.YPos, TempValA)
+ShL(TempValA, 9)
+Sub(Object.ValueD, TempValA)
+Inc(Object.ValueE)
+CheckEqual(Object.ValueE, 8)
+switch(CheckResult, 0)
+Equal(Object.ValueE, 0)
+end switch(0)
+CheckGreater(Object.ValueC, 10000)
+switch(CheckResult, 0)
+Equal(Object.Type, 0)
+Equal(Object.Priority, 0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 96: default -> pos 0 (line 0), end -> pos 108
+    case 1: -> pos 102 (line 16)
+switch @pos 117: default -> pos 0 (line 0), end -> pos 135
+    case 1: -> pos 123 (line 21)
+
+--- SubPlayerInteraction ---
+HurtCollisionForce(-4, -4, 4, 4)
+
+--- SubUnknown3 ---
+Equal(TempValA, Object.ValueE)
+ShR(TempValA, 2)
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(8, 8, -4, -4, 67, 99)
+SpriteFrame(8, 8, -4, -4, 67, 108)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(8, 8, -4, -4, 67, 99)

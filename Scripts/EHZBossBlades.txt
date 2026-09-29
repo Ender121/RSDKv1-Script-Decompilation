@@ -1,0 +1,102 @@
+# EHZBossBlades.rsf  (783 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueA)
+LABEL 0:
+Add(Object.ValueB, 1)
+CheckGreater(Object.ValueB, 3)
+Add(CheckResult, 6)
+goto(CheckResult)
+LABEL 7:
+Equal(Object.ValueB, 0)
+LABEL 6:
+goto(3)
+LABEL 1:
+Add(Object.YPos, 1)
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 12)
+Add(CheckResult, 8)
+goto(CheckResult)
+LABEL 9:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueA, 3)
+Equal(Object.ValueA[3], 3)
+Equal(Object.ValueA[4], 2)
+Equal(Object.ValueA[5], 3)
+Equal(Object.ValueA[6], 3)
+Equal(Object.ValueA[7], 1)
+Equal(Object.ValueD[7], -2)
+LABEL 8:
+goto(3)
+LABEL 2:
+Sub(Object.YPos, 1)
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 12)
+Add(CheckResult, 10)
+goto(CheckResult)
+LABEL 11:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueA, 5)
+LABEL 10:
+goto(3)
+LABEL 4:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 32)
+Add(CheckResult, 12)
+goto(CheckResult)
+LABEL 13:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueA, 1)
+LABEL 12:
+goto(3)
+LABEL 5:
+Add(Object.ValueB, 1)
+CheckEqual(Object.ValueB, 32)
+Add(CheckResult, 14)
+goto(CheckResult)
+LABEL 15:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueA, 0)
+Equal(Object.ValueA[1], 2)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+goto(Object.ValueA)
+LABEL 0:
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 1)
+DrawSprite(TempValA)
+goto(6)
+LABEL 1:
+LABEL 2:
+LABEL 3:
+DrawSprite(2)
+goto(6)
+LABEL 4:
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 3)
+Equal(TempValB, 6)
+Sub(TempValB, TempValA)
+DrawSprite(TempValB)
+goto(6)
+LABEL 5:
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 3)
+Add(TempValA, 3)
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(80, 16, -8, -8, 173, 1)
+SpriteFrame(80, 16, -72, -8, 109, 18)
+SpriteFrame(16, 16, -8, -8, 173, 18)
+SpriteFrame(48, 16, -24, -8, 157, 1)
+SpriteFrame(80, 16, -40, -8, 141, 1)
+SpriteFrame(112, 16, -56, -8, 125, 1)
+SpriteFrame(144, 16, -72, -8, 109, 1)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(144, 16, -72, -8, 109, 1)
+CreateTempObject(36, 0, 0, 0)

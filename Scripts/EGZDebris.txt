@@ -1,0 +1,41 @@
+# EGZDebris.rsf  (320 bytes) - OK
+
+--- SubMain ---
+Add(Object.ValueC, Object.ValueB)
+Equal(TempValA, Object.ValueC)
+ShR(TempValA, 7)
+Add(Object.XPos, TempValA)
+ShL(TempValA, 7)
+Sub(Object.ValueC, TempValA)
+Add(Object.ValueD, 16)
+Add(Object.ValueE, Object.ValueD)
+Equal(TempValA, Object.ValueE)
+ShR(TempValA, 7)
+Add(Object.YPos, TempValA)
+ShL(TempValA, 7)
+Sub(Object.ValueE, TempValA)
+CheckGreater(Object.ValueD, 2048)
+switch(CheckResult, 0)
+Equal(Object.Type, 0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 92: default -> pos 0 (line 0), end -> pos 104
+    case 1: -> pos 98 (line 15)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+DrawSprite(Object.PropertyValue)
+
+--- SubDraw ---
+SpriteFrame(58, 26, -29, -13, 143, 105)
+SpriteFrame(32, 32, -32, -32, 176, 1)
+SpriteFrame(32, 32, 0, -32, 208, 1)
+SpriteFrame(32, 32, -32, 0, 176, 33)
+SpriteFrame(32, 32, 0, 0, 208, 33)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(58, 26, -29, -13, 143, 105)

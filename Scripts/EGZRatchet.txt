@@ -1,0 +1,69 @@
+# EGZRatchet.rsf  (476 bytes) - OK
+
+--- SubMain ---
+switch(Object.PropertyValue, 0)
+Equal(Object.YPos, Object.YPos[2])
+Add(Object.YPos, 24)
+Equal(Object.ValueA, Object.YPos)
+Sub(Object.ValueA, Object.YPos[-4])
+Sub(Object.ValueA, 33)
+Equal(Object.ValueB, Object.ValueA)
+ShR(Object.ValueA, 4)
+ShL(Object.ValueA, 4)
+Sub(Object.ValueB, Object.ValueA)
+Equal(Object.ValueC, Object.XPos[2])
+Sub(Object.ValueC, 15)
+Add(Object.ValueC, Object.ValueB)
+CheckLower(Object.ValueC, Object.XPos)
+switch(CheckResult, 0)
+Add(Object.XPos, Object.ValueC)
+ShR(Object.XPos, 1)
+break(0)
+Equal(Object.XPos, Object.ValueC)
+end switch(0)
+break(0)
+Equal(Object.YPos, Object.YPos[1])
+Add(Object.YPos, 24)
+Equal(Object.ValueA, Object.YPos)
+Sub(Object.ValueA, Object.YPos[-5])
+Sub(Object.ValueA, 33)
+Equal(Object.ValueB, Object.ValueA)
+ShR(Object.ValueA, 4)
+ShL(Object.ValueA, 4)
+Sub(Object.ValueB, Object.ValueA)
+Equal(Object.ValueC, Object.XPos[1])
+Add(Object.ValueC, 15)
+Sub(Object.ValueC, Object.ValueB)
+CheckGreater(Object.ValueC, Object.XPos)
+switch(CheckResult, 0)
+Add(Object.XPos, Object.ValueC)
+ShR(Object.XPos, 1)
+break(0)
+Equal(Object.XPos, Object.ValueC)
+end switch(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 245
+    case 0: -> pos 6 (line 1)
+    case 1: -> pos 127 (line 24)
+switch @pos 92: default -> pos 0 (line 0), end -> pos 121
+    case 0: -> pos 98 (line 16)
+    case 1: -> pos 114 (line 20)
+switch @pos 213: default -> pos 0 (line 0), end -> pos 242
+    case 0: -> pos 219 (line 39)
+    case 1: -> pos 235 (line 43)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+DrawSprite(Object.PropertyValue)
+
+--- SubDraw ---
+SpriteFrame(23, 8, -26, -8, 50, 77)
+SpriteFrame(23, 8, 4, -8, 50, 68)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(23, 8, -26, -8, 50, 77)

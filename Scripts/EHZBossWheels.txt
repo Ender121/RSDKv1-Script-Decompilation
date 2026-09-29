@@ -1,0 +1,121 @@
+# EHZBossWheels.rsf  (1022 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueA)
+LABEL 1:
+Dec(Object.XPos)
+ObjectFloorGrip(0, 0, 16)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 4)
+Add(CheckResult, 6)
+goto(CheckResult)
+LABEL 7:
+Equal(Object.ValueB, 0)
+LABEL 6:
+goto(0)
+LABEL 2:
+Inc(Object.XPos)
+ObjectFloorGrip(0, 0, 16)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 4)
+Add(CheckResult, 8)
+goto(CheckResult)
+LABEL 9:
+Equal(Object.ValueB, 0)
+LABEL 8:
+goto(0)
+LABEL 3:
+Sub(Object.XPos, 2)
+ObjectFloorGrip(0, 0, 16)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 4)
+Add(CheckResult, 10)
+goto(CheckResult)
+LABEL 11:
+Equal(Object.ValueB, 0)
+LABEL 10:
+CheckLower(Object.XPos, 10256)
+Add(CheckResult, 14)
+goto(CheckResult)
+LABEL 15:
+Equal(Object.ValueA, 4)
+Equal(Object.ValueC, 1)
+LABEL 14:
+goto(0)
+LABEL 4:
+Add(Object.XPos, 2)
+ObjectFloorGrip(0, 0, 16)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 4)
+Add(CheckResult, 12)
+goto(CheckResult)
+LABEL 13:
+Equal(Object.ValueB, 0)
+LABEL 12:
+CheckGreater(Object.XPos, 10976)
+Add(CheckResult, 16)
+goto(CheckResult)
+LABEL 17:
+Equal(Object.ValueA, 3)
+Equal(Object.ValueC, 0)
+LABEL 16:
+goto(0)
+LABEL 5:
+Add(Object.XPos, Object.ValueF)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 4)
+Add(CheckResult, 18)
+goto(CheckResult)
+LABEL 19:
+Equal(Object.ValueB, 0)
+LABEL 18:
+Add(Object.ValueE, 20)
+Equal(TempValA, Object.ValueE)
+ShR(TempValA, 7)
+Add(Object.YPos, TempValA)
+ObjectFloorCollision(0, 0, 16)
+Add(CheckResult, 20)
+goto(CheckResult)
+LABEL 21:
+Sub(Object.ValueE, 20)
+Mul(Object.ValueE, -1)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+Equal(TempValB, Object.ValueB)
+ShR(TempValB, 1)
+Equal(TempValA, Object.ValueC)
+ShL(TempValA, 1)
+Add(TempValB, TempValA)
+Equal(TempValA, Object.PropertyValue)
+ShL(TempValA, 3)
+Add(TempValB, TempValA)
+Equal(TempValA, Object.ValueD)
+ShL(TempValA, 2)
+Add(TempValB, TempValA)
+DrawSprite(TempValB)
+
+--- SubDraw ---
+SpriteFrame(32, 32, -16, -16, 1, 223)
+SpriteFrame(32, 32, -16, -16, 34, 223)
+SpriteFrame(32, 32, -16, -16, 1, 190)
+SpriteFrame(32, 32, -16, -16, 34, 190)
+SpriteFrame(32, 32, -16, -16, 109, 134)
+SpriteFrame(32, 32, -16, -16, 142, 134)
+SpriteFrame(32, 32, -16, -16, 109, 101)
+SpriteFrame(32, 32, -16, -16, 142, 101)
+SpriteFrame(32, 32, -16, -16, 67, 223)
+SpriteFrame(32, 32, -16, -16, 100, 223)
+SpriteFrame(32, 32, -16, -16, 67, 190)
+SpriteFrame(32, 32, -16, -16, 100, 190)
+SpriteFrame(32, 32, -16, -16, 175, 195)
+SpriteFrame(32, 32, -16, -16, 208, 195)
+SpriteFrame(32, 32, -16, -16, 175, 162)
+SpriteFrame(32, 32, -16, -16, 208, 162)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(32, 32, -16, -16, 1, 223)
+CreateTempObject(39, 0, 0, 0)

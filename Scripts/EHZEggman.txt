@@ -1,0 +1,95 @@
+# EHZEggman.rsf  (775 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueA)
+LABEL 1:
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 16)
+Add(CheckResult, 4)
+goto(CheckResult)
+LABEL 5:
+Equal(Object.ValueB, 0)
+Inc(Object.ValueC)
+LABEL 4:
+CheckEqual(Object.ValueC, 4)
+Add(CheckResult, 6)
+goto(CheckResult)
+LABEL 7:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueC, 0)
+Equal(Object.ValueA, 0)
+LABEL 6:
+goto(0)
+LABEL 2:
+Inc(Object.ValueB)
+CheckGreater(Object.ValueB, 3)
+Add(CheckResult, 8)
+goto(CheckResult)
+LABEL 9:
+Equal(Object.ValueB, 0)
+Inc(Object.ValueC)
+LABEL 8:
+Equal(Object.ValueD[1], Object.ValueB)
+ShR(Object.ValueD[1], 1)
+Equal(Object.ValueD[3], Object.ValueD[1])
+Equal(Object.ValueD[4], Object.ValueD[1])
+CheckGreater(Object.ValueC, 7)
+Add(CheckResult, 10)
+goto(CheckResult)
+LABEL 11:
+Equal(Object.ValueB, 0)
+Equal(Object.ValueC, 0)
+Equal(Object.ValueA, 0)
+Equal(Object.ValueD[1], 0)
+Equal(Object.ValueD[3], 0)
+Equal(Object.ValueD[4], 0)
+LABEL 10:
+goto(0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+Equal(TempValA, Object.ValueC[-1])
+goto(Object.ValueA)
+LABEL 0:
+DrawSprite(TempValA)
+goto(4)
+LABEL 1:
+Equal(TempValB, Object.ValueB)
+ShR(TempValB, 3)
+ShL(TempValB, 1)
+Add(TempValA, TempValB)
+Add(TempValA, 2)
+DrawSprite(TempValA)
+goto(4)
+LABEL 2:
+Add(TempValA, 6)
+DrawSprite(TempValA)
+goto(4)
+LABEL 3:
+Add(TempValA, 8)
+DrawSprite(TempValA)
+LABEL 4:
+Equal(TempValA, Object.ValueC[-1])
+Add(TempValA, 10)
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(33, 15, -17, -19, 9, 91)
+SpriteFrame(33, 15, -16, -19, 1, 1)
+SpriteFrame(34, 15, -18, -19, 8, 107)
+SpriteFrame(34, 15, -16, -19, 1, 17)
+SpriteFrame(36, 16, -20, -20, 6, 123)
+SpriteFrame(36, 16, -16, -20, 1, 33)
+SpriteFrame(41, 18, -25, -22, 1, 140)
+SpriteFrame(41, 18, -16, -22, 1, 50)
+SpriteFrame(38, 21, -22, -25, 4, 159)
+SpriteFrame(38, 21, -16, -25, 1, 69)
+SpriteFrame(24, 12, -29, -15, 47, 52)
+SpriteFrame(24, 12, 5, -15, 81, 6)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(33, 15, -17, -19, 9, 91)
+CreateTempObject(38, 0, 0, 0)

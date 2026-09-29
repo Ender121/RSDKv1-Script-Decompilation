@@ -1,0 +1,102 @@
+# EGZEggMobile.rsf  (708 bytes) - OK
+
+--- SubMain ---
+switch(Object.ValueA, 0)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 4)
+switch(CheckResult, 0)
+Dec(Object.YPos)
+Rand(60, TempValA)
+Sub(TempValA, 32)
+Add(TempValA, Object.XPos)
+Rand(40, TempValB)
+Sub(TempValB, 28)
+Add(TempValB, Object.YPos)
+CreateTempObject(21, 0, TempValA, TempValB)
+PlaySfx(15, 0)
+Equal(Object.ValueB, 0)
+Inc(Object.ValueE)
+CheckEqual(Object.ValueE, 60)
+switch(CheckResult, 0)
+Equal(Object.ValueE, 0)
+Equal(Object.ValueA, 1)
+Equal(TempValA, Object.XPos[13])
+Add(TempValA, 160)
+Equal(XBoundary1, TempValA)
+Add(TempValA, 320)
+Equal(XBoundary2, TempValA)
+PlayMusic(0)
+end switch(0)
+end switch(0)
+break(0)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 80)
+switch(CheckResult, 0)
+Equal(Object.ValueA, 2)
+Equal(Object.ValueB, 224)
+Equal(Object.ValueF, 1)
+Equal(Object.ValueE, 0)
+Equal(Object.Priority, 1)
+end switch(0)
+break(0)
+Add(Object.XPos, 2)
+Sub(Object.ValueB, 8)
+Add(Object.ValueC, Object.ValueB)
+Equal(TempValA, Object.ValueC)
+ShR(TempValA, 7)
+Add(Object.YPos, TempValA)
+ShL(TempValA, 7)
+Sub(Object.ValueC, TempValA)
+Inc(Object.ValueE)
+CheckEqual(Object.ValueE, 4)
+switch(CheckResult, 0)
+Equal(Object.ValueE, 0)
+end switch(0)
+CheckLower(Object.ValueB, -1000)
+switch(CheckResult, 0)
+Equal(Object.Type, 0)
+Equal(Object.Priority, 0)
+end switch(0)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 315
+    case 0: -> pos 6 (line 1)
+    case 1: -> pos 159 (line 31)
+    case 2: -> pos 211 (line 43)
+switch @pos 16: default -> pos 0 (line 0), end -> pos 153
+    case 1: -> pos 22 (line 5)
+switch @pos 96: default -> pos 0 (line 0), end -> pos 150
+    case 1: -> pos 102 (line 19)
+switch @pos 169: default -> pos 0 (line 0), end -> pos 205
+    case 1: -> pos 175 (line 35)
+switch @pos 273: default -> pos 0 (line 0), end -> pos 285
+    case 1: -> pos 279 (line 55)
+switch @pos 294: default -> pos 0 (line 0), end -> pos 312
+    case 1: -> pos 300 (line 60)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+switch(Object.ValueA, 0)
+Equal(TempValA, Object.ValueE)
+ShR(TempValA, 1)
+Add(TempValA, 2)
+DrawSprite(TempValA)
+end switch(0)
+DrawSprite(Object.ValueF)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 29
+    case 2: -> pos 6 (line 1)
+
+--- SubDraw ---
+SpriteFrame(61, 60, -30, -30, 63, 163)
+SpriteFrame(61, 54, -30, -24, 1, 163)
+SpriteFrame(10, 9, -37, 7, 193, 83)
+SpriteFrame(13, 11, -39, 6, 190, 93)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(61, 60, -30, -30, 63, 163)

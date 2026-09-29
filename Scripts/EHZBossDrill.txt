@@ -1,0 +1,56 @@
+# EHZBossDrill.rsf  (491 bytes) - OK
+
+--- SubMain ---
+goto(Object.ValueA)
+LABEL 1:
+Equal(Object.YPos, Object.YPos[-3])
+Add(Object.YPos, 8)
+goto(6)
+LABEL 2:
+LABEL 3:
+Inc(Object.ValueF)
+CheckEqual(Object.ValueF, 256)
+Add(CheckResult, 7)
+goto(CheckResult)
+LABEL 8:
+Equal(Object.Type, 0)
+Equal(Object.Priority, 0)
+LABEL 7:
+LABEL 6:
+Add(Object.XPos, Object.ValueD)
+Inc(Object.ValueB)
+CheckEqual(Object.ValueB, 12)
+Add(CheckResult, 4)
+goto(CheckResult)
+LABEL 5:
+Equal(Object.ValueB, 0)
+
+--- SubPlayerInteraction ---
+goto(Object.ValueA)
+LABEL 1:
+LABEL 2:
+HurtCollisionForce(-16, -12, 16, 11)
+Add(CheckResult, 4)
+goto(CheckResult)
+LABEL 5:
+Equal(Object.ValueA[-5], 1)
+
+--- SubUnknown3 ---
+Equal(TempValA, Object.ValueB)
+ShR(TempValA, 2)
+ShL(TempValA, 1)
+Add(TempValA, Object.ValueC[-3])
+DrawSprite(TempValA)
+
+--- SubDraw ---
+SpriteFrame(32, 23, -16, -12, 203, 18)
+SpriteFrame(32, 23, -16, -12, 203, 90)
+SpriteFrame(32, 23, -16, -12, 203, 42)
+SpriteFrame(32, 23, -16, -12, 203, 114)
+SpriteFrame(32, 23, -16, -12, 203, 66)
+SpriteFrame(32, 23, -16, -12, 203, 138)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(32, 23, -16, -12, 203, 18)
+CreateTempObject(41, 0, 0, 0)

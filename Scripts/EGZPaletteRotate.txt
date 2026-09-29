@@ -1,0 +1,34 @@
+# EGZPaletteRotate.rsf  (216 bytes) - OK
+
+--- SubMain ---
+switch(Object.ValueF, 0)
+Equal(Object.Priority, 2)
+Inc(Object.ValueF)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 0: default -> pos 0 (line 0), end -> pos 16
+    case 0: -> pos 6 (line 1)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+Inc(Object.ValueA)
+CheckEqual(Object.ValueA, 4)
+switch(CheckResult, 0)
+Equal(Object.ValueA, 0)
+RotatePalette(252, 255, 1)
+end switch(0)
+
+-- switch/jump tables --
+switch @pos 10: default -> pos 0 (line 0), end -> pos 29
+    case 1: -> pos 16 (line 3)
+
+--- SubDraw ---
+SpriteFrame(16, 16, -8, -8, 1, 18)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(16, 16, -8, -8, 39, 304)
+CreateTempObject(34, 0, 0, 0)

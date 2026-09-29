@@ -1,0 +1,17 @@
+# SSBomb.rsf  (114 bytes) - OK
+
+--- SubMain ---
+HandleMode7Movement(0)
+
+--- SubPlayerInteraction ---
+EndSub(0)
+
+--- SubUnknown3 ---
+DrawSpriteMode7(0)
+
+--- SubDraw ---
+SpriteFrame(32, 32, -16, -16, 66, 1)
+
+--- SubStartup ---
+SetEditorIcon(1)
+SetEditorFrame(32, 32, -16, -16, 66, 1)
